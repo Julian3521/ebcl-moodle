@@ -51,10 +51,10 @@ const DEFAULT_CONFIG = {
   trainerPwd: 'Trainer2026!',
   autoPassword: false,
   showLeitfaden: true,
-  enrolPeriod: 31,
-  defaultEnrolPeriod: 31,
+  enrolPeriod: 180,
+  defaultEnrolPeriod: 180,
   enrolDate: new Date().toISOString().split('T')[0],
-  classSizes: [15, 20, 30, 40],
+  classSizes: [2, 25, 30, 40],
   classCounts: { 0: 1, 1: 1, 2: 1, 3: 1 },
   classNames: {},
   trainerCount: 2,
@@ -62,13 +62,13 @@ const DEFAULT_CONFIG = {
   selectedPoolCourseIds: Array(8).fill('none'),
   courseApiUrl: 'https://ENTFERNT.2a.environment.api.powerplatform.com/powerautomate/automations/direct/workflows/ENTFERNT/triggers/manual/paths/invoke?api-version=1&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=ENTFERNT',
   sharepointUrl: 'https://ENTFERNT.2a.environment.api.powerplatform.com:443/powerautomate/automations/direct/workflows/ENTFERNT/triggers/manual/paths/invoke?api-version=1&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=ENTFERNT',
-  moodleUrl: '',
-  moodleToken: '',
-  zohoClientId: '',
-  zohoClientSecret: '',
-  zohoRefreshToken: '',
-  customAccents: ['#3b82f6', '#10b981', '#f59e0b', '#8b5cf6'],
-  tagColorMap: {},
+  moodleUrl: 'https://world.ebcl.eu',
+  moodleToken: '96a357dda33a14adc9dbc58d11a4ee2e',
+  zohoClientId: '1000.YR47SEZ520VT8P4C4N66WU6JUZ933I',
+  zohoClientSecret: '9e6caad1ba5c1659900b59c40ab170306485c948cf',
+  zohoRefreshToken: 'ENTFERNT',
+  customAccents: ['#ab0325', '#153d61', '#f59e0b', '#00664f'],
+  tagColorMap: { 'Schule': 0, 'Test': 1 },
 };
 
 
@@ -95,7 +95,7 @@ const findValueByPattern = (item, patterns) => {
   return null;
 };
 const isGuid = s => /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i.test(s);
-const DEFAULT_ACCENTS = ['#3b82f6', '#10b981', '#f59e0b', '#8b5cf6'];
+const DEFAULT_ACCENTS = ['#ab0325', '#153d61', '#f59e0b', '#00664f'];
 const esc = v => `"${String(v ?? '').replace(/"/g, '""')}"`;
 const fmtTime = d => d.toLocaleTimeString('de-DE', { hour: '2-digit', minute: '2-digit', second: '2-digit' });
 const fmtDate = d => d.toLocaleDateString('de-DE', { day: '2-digit', month: '2-digit', year: 'numeric' });
